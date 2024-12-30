@@ -2,21 +2,23 @@
 function binarySearch<T>(arr: T[], target: T): number {
   let left = 0;
   let right = arr.length - 1;
+  let result = -1;
 
   while (left <= right) {
     const mid = Math.floor((left + right) / 2); // 配列中央のindexを取得する
 
     if (arr[mid] === target) {
-      return mid; // ターゲットが見つかった場合
+      result = mid; // ターゲットが見つかっても返却せず値を保存しておいて、再度右側を探索
+      right = mid - 1; //　左側を再探索
     }
 
     if (arr[mid] && arr[mid] < target) {
-      left = mid + 1; // ターゲットが右側にある場合
+      left = mid + 1;
     } else {
-      right = mid - 1; // ターゲットが左側にある場合
+      right = mid - 1;
     }
   }
-  return -1;
+  return result;
 }
 
 const arr: number[] = [1, 2, 2, 2, 3, 4, 5, 6, 7, 8];
