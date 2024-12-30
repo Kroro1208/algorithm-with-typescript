@@ -8,3 +8,12 @@ function findRange<T>(arr: T[], start: T, end: T): [number, number] {
 }
 
 console.log(findRange(arr, 3, 8));
+
+// 特定の値の出現をカウントするアルゴリズム
+function countOccurence<T>(arr: T[], target: T): number {
+  const startIndex = lowerBound(arr, target);
+  const endIndex = upperBound(arr, target);
+  return endIndex - startIndex;
+}
+
+console.log(countOccurence(arr, 2));
