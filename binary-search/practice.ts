@@ -23,7 +23,7 @@ function binarySearch<T>(arr: T[], target: T): number {
 
 // lower_bound
 // target以上の最小にindexを返す(targetを含む)
-function lowerBound<T>(arr: T[], target: T): number {
+export function lowerBound<T>(arr: T[], target: T): number {
   let left = 0;
   let right = arr.length;
   while (left < right) {
@@ -40,7 +40,7 @@ function lowerBound<T>(arr: T[], target: T): number {
 
 // upper_bound
 // tagetより大きい最小のindexを返す(targetは含まない)
-function upperBound<T>(arr: T[], target: T): number {
+export function upperBound<T>(arr: T[], target: T): number {
   let left = 0;
   let right = arr.length;
 
@@ -55,7 +55,7 @@ function upperBound<T>(arr: T[], target: T): number {
   return left;
 }
 
-const arr: number[] = [1, 2, 2, 2, 3, 5, 6, 7, 8];
+export const arr: number[] = [1, 2, 2, 2, 3, 5, 6, 7, 8];
 console.log(binarySearch(arr, 2)); // 正しい場合、最初に見つかる `2` のインデックスを返す
 console.log(lowerBound(arr, 4));
 console.log(upperBound(arr, 5));
