@@ -17,3 +17,21 @@ function countOccurence<T>(arr: T[], target: T): number {
 }
 
 console.log(countOccurence(arr, 2));
+
+// ソートされていない値に対して2分探索
+function searchUnsortArray<T>(arr: T[], target: T): number {
+  // 配列をコピーしてsort
+  const sortedArr = [...arr].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
+
+  // sort済み配列で2分探索
+  const index = lowerBound(sortedArr, target);
+  console.log("sort済み配列での位置", index);
+
+  // 必要であれば元の配列での位置も探す
+  return index < sortedArr.length && sortedArr[index] === target
+    ? arr.indexOf(target)
+    : -1;
+}
+
+const unSortArr = [5, 6, 2, 8, 3, 9, 0];
+console.log("元の配列での位置", searchUnsortArray(unSortArr, 2));
