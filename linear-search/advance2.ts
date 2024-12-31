@@ -13,8 +13,8 @@ console.log(findCommonElements(arr1, arr2));
 // 最大値を最小値を同時に探す
 function findMinMax<T>(arr3: T[]): { min: T; max: T } {
   if (arr3.length === 0) throw new Error("エラーが発生しました");
-  let min = arr3[0];
-  let max = arr3[0];
+  let min = arr3[0] as T;
+  let max = arr3[0] as T;
   for (const item of arr3) {
     if (item < min) min = item;
     if (item > max) max = item;

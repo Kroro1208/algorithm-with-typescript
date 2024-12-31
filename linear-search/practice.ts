@@ -21,7 +21,7 @@ function linearSearchPredicate<T>(
   predicate: (item: T) => boolean
 ): number {
   for (let i = 0; i < arr.length; i++) {
-    if (predicate(arr[i])) {
+    if (predicate(arr[i] as T)) {
       return i;
     }
   }
