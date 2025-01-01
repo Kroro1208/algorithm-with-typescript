@@ -28,7 +28,7 @@ const users: User[] = [
   { id: 1, name: "Alice", age: 25 },
   { id: 2, name: "Naoya", age: 38 },
   { id: 3, name: "Akira", age: 30 },
-  { id: 4, name: "Alice", age: 22 },
+  { id: 4, name: "Alice", age: 44 },
 ];
 
 // 部分検索可能なようにPartial<User>を使用

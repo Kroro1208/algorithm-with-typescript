@@ -1,7 +1,7 @@
 // 基本的なバブルソート
 function bubbleSort<T>(arr: T[]): T[] {
   const result = [...arr];
-  const n = result.length;
+  const n = result.length - 1;
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n - i; j++) {
       let current = result[j] as T;
